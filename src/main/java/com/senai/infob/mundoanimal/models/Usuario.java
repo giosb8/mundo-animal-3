@@ -18,7 +18,7 @@ public class Usuario{
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) 
     @Column(name="id") 
-    private Integer Id; 
+    private Integer id; 
 
     @Column(name="nome_completo") 
     private String nomeCompleto; 
@@ -49,7 +49,7 @@ public class Usuario{
     }
 
     public Usuario(Integer Id, String cpf, LocalDate dataNascimento, String email, String nomeCompleto, String senha) {
-        this.Id = Id;
+        this.id = Id;
         this.cpf = cpf;
         this.dataNascimento = dataNascimento;
         this.email = email;
@@ -59,11 +59,11 @@ public class Usuario{
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
-    public void setId(Integer Id) {
-        this.Id = Id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNomeCompleto() {
