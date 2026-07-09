@@ -27,7 +27,7 @@ public class PostagemController {
 public Postagem salvar(
         @RequestPart("titulo") String titulo,
         @RequestPart("descricao") String descricao,
-        @RequestPart("imagem") MultipartFile imagem
+        @RequestPart(required=false) MultipartFile imagem
 ) throws IOException {
 
     Postagem postagem = new Postagem();
