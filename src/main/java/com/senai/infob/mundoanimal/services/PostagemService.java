@@ -10,45 +10,42 @@ import com.senai.infob.mundoanimal.repositories.PostagemRepository;
 
 @Service
 public class PostagemService {
+
+
     @Autowired
     private PostagemRepository postagemRepository;
 
-    public Long count(){
-        return postagemRepository.count();
-    }
 
-     public Postagem salvar(Postagem postagem) {
+    public Postagem salvar(Postagem postagem) {
+
         return postagemRepository.save(postagem);
+
     }
 
-    
-    public boolean delete(Integer id){
-        Postagem postagem = postagemRepository.findById(id).get();
-        if (postagem != null) {
-            postagemRepository.deleteById(id);
-            return true;
-        }
-        return false;
-    }
-
-     public Postagem busca(Integer id) {
-        return postagemRepository.findById(id).get();
-    }
 
     public List<Postagem> lista() {
+
         return postagemRepository.findAll();
+
     }
 
-    public List<Postagem> buscaPostagens(String pagina) {
-        return postagemRepository.buscaPostagens(pagina);
+
+    public Postagem busca(Integer id) {
+
+        return postagemRepository.findById(id).orElse(null);
+
     }
 
-    public Postagem atualizar(Postagem postagem, Integer id){
-        Postagem e = busca(id);
-        if (e != null) {
-            postagem.setId(id);
-            return postagemRepository.save(postagem);
+
+    public boolean delete(Integer id) {
+
+        if(postagemRepository.existsById(id)) {
+
+            postagemRepository.deleteById(id);
+            return true;
+
         }
-        return null;
+
+        return false;
     }
 }
