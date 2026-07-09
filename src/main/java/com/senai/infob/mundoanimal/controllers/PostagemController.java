@@ -20,19 +20,18 @@ public class PostagemController {
 
 
     @PostMapping(
-        value = "/salvar",
-        consumes = MediaType.MULTIPART_FORM_DATA_VALUE
-    )
-    public Postagem salvar(
-            @RequestPart("postagem") Postagem postagem,
-            @RequestPart("imagem") MultipartFile imagem
-    ) throws IOException {
+    value = "/salvar",
+    consumes = MediaType.MULTIPART_FORM_DATA_VALUE
+)
+public Postagem salvar(
+        @RequestPart("postagem") String postagemJson,
+        @RequestPart("imagem") MultipartFile imagem
+) throws IOException {
 
-        // transforma a imagem em byte[]
-        postagem.setImagem(imagem.getBytes());
+    System.out.println(postagemJson);
 
-        return postagemService.salvar(postagem);
-    }
+    return null;
+}
 
 
     @GetMapping("/lista")
