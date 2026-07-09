@@ -32,19 +32,19 @@ public class Postagem{
     private String descricao;
 
     @Column(name="localizacao")
-    private String localizacao;
+    private String localizacao;//jjjj
 
     @Column(name="tel_contato")
     private String telContato;
 
     @Column(name="imagem")
-    private Blob imagem;
+    private byte[] imagem;
 
     @Column(name="data_hora")
     private LocalDate dataHora;
 
     @Column(name="paginas")
-    private JCheckBox paginas;
+    private Boolean paginas;
 
 
     // @ManyToMany
@@ -59,8 +59,9 @@ public class Postagem{
     public Postagem() {
     }
 
-    public Postagem(Integer id, String titulo, String descricao, String localizacao, String telContato, Blob imagem,
-            LocalDate dataHora, JCheckBox paginas) {
+
+    public Postagem(Integer id, String titulo, String descricao, String localizacao, String telContato, byte[] imagem,
+            LocalDate dataHora, Boolean paginas) {
         Id = id;
         this.titulo = titulo;
         this.descricao = descricao;
@@ -70,70 +71,84 @@ public class Postagem{
         this.dataHora = dataHora;
         this.paginas = paginas;
     }
+
 
     public Integer getId() {
         return Id;
     }
 
+
     public void setId(Integer id) {
         Id = id;
     }
+
 
     public String getTitulo() {
         return titulo;
     }
 
+
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
+
 
     public String getDescricao() {
         return descricao;
     }
 
+
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
 
     public String getLocalizacao() {
         return localizacao;
     }
 
+
     public void setLocalizacao(String localizacao) {
         this.localizacao = localizacao;
     }
+
 
     public String getTelContato() {
         return telContato;
     }
 
+
     public void setTelContato(String telContato) {
         this.telContato = telContato;
     }
 
-    public Blob getImagem() {
+
+    public byte[] getImagem() {
         return imagem;
     }
 
-    public void setImagem(Blob imagem) {
+
+    public void setImagem(byte[] imagem) {
         this.imagem = imagem;
     }
+
 
     public LocalDate getDataHora() {
         return dataHora;
     }
 
+
     public void setDataHora(LocalDate dataHora) {
         this.dataHora = dataHora;
     }
 
-    public JCheckBox getPaginas() {
+
+    public Boolean getPaginas() {
         return paginas;
     }
 
-    public void setPaginas(JCheckBox paginas) {
+
+    public void setPaginas(Boolean paginas) {
         this.paginas = paginas;
     }
-
-   
 }
