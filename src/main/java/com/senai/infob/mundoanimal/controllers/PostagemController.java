@@ -20,25 +20,20 @@ public class PostagemController {
     private PostagemService postagemService;
 
 
-    @PostMapping(value = "/salvar", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(
+    value = "/salvar",
+    consumes = MediaType.MULTIPART_FORM_DATA_VALUE
+)
 public Postagem salvar(
-        @RequestParam String titulo,
-        @RequestParam String descricao,
-        @RequestParam String localizacao,
-        @RequestParam String telContato,
-        @RequestParam LocalDate dataHora,
-        @RequestParam Boolean paginas,
-        @RequestParam MultipartFile imagem
+        @RequestPart("titulo") String titulo,
+        @RequestPart("descricao") String descricao,
+        @RequestPart("imagem") MultipartFile imagem
 ) throws IOException {
 
     Postagem postagem = new Postagem();
 
     postagem.setTitulo(titulo);
     postagem.setDescricao(descricao);
-    postagem.setLocalizacao(localizacao);
-    postagem.setTelContato(telContato);
-    postagem.setDataHora(dataHora);
-    postagem.setPaginas(paginas);
     postagem.setImagem(imagem.getBytes());
 
     return postagemService.salvar(postagem);
