@@ -43,8 +43,18 @@ public class EnderecoService {
     public Endereco atualizar(Endereco endereco, Integer id){
         Endereco e = busca(id);
         if (e != null) {
-            endereco.setId(id);
-            return enderecoRepository.save(endereco);
+            e.setId(id);
+            if (endereco.getCep() != null)
+                e.setCep(endereco.getCep());
+            if (endereco.getBairro() != null)
+                e.setBairro(endereco.getBairro());
+            if (endereco.getRua() != null)
+                e.setRua(endereco.getRua());
+            if (endereco.getUf() != null)
+                e.setUf(endereco.getUf());
+            if (endereco.getCidade() != null)
+                e.setCidade(endereco.getCidade());
+            return enderecoRepository.save(e);
         }
         return null;
     }

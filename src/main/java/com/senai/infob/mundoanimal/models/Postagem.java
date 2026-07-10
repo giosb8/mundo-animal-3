@@ -24,7 +24,7 @@ public class Postagem{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer Id;
+    private Integer id;
 
     @Column(name="titulo")
     private String titulo;
@@ -64,7 +64,7 @@ public class Postagem{
 
     public Postagem(Integer id, String titulo, String descricao, String localizacao, String telContato, byte[] imagem,
             LocalDate dataHora, Boolean paginas) {
-        Id = id;
+        id = id;
         this.titulo = titulo;
         this.descricao = descricao;
         this.localizacao = localizacao;
@@ -76,12 +76,12 @@ public class Postagem{
 
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
 
     public void setId(Integer id) {
-        Id = id;
+        id = id;
     }
 
 

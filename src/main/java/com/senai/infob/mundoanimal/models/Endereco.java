@@ -14,7 +14,7 @@ public class Endereco{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer Id;
+    private Integer id;
 
     @Column(name="bairro")
     private String bairro;
@@ -35,7 +35,7 @@ public class Endereco{
     }
 
     public Endereco(Integer id, String bairro, String cidade, String rua, String cep, String uf) {
-        Id = id;
+        id = id;
         this.bairro = bairro;
         this.cidade = cidade;
         this.rua = rua;
@@ -44,11 +44,11 @@ public class Endereco{
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        id = id;
     }
 
     public String getBairro() {

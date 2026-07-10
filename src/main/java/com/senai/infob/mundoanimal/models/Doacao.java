@@ -2,8 +2,6 @@ package com.senai.infob.mundoanimal.models;
 
 import java.util.List;
 
-import com.senai.infob.mundoanimal.enums.TipoPagamento;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,18 +19,18 @@ public class Doacao{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer Id;
+    private Integer id;
 
-    @Column(name="pagamento")
-    private TipoPagamento pagamento;
+    // @Column(name="pagamento")
+    // private TipoPagamento pagamento;
 
-    public Doacao(TipoPagamento pagamento) {
-        this.pagamento = pagamento;
-    }
+    // public Doacao(TipoPagamento pagamento) {
+    //     this.pagamento = pagamento;
+    // }
 
-    public TipoPagamento getPagamento() {
-        return pagamento;
-    }
+    // public TipoPagamento getPagamento() {
+    //     return pagamento;
+    // }
 
     @Column(name="material")
     private String material;
@@ -52,24 +50,19 @@ public class Doacao{
     public Doacao() {
     }
 
-    public Doacao(Integer id, TipoPagamento pagamento, String material, String telContato) {
-        Id = id;
-        this.pagamento = pagamento;
+    public Doacao(Integer id, String material, String telContato) {
+        id = id;
         this.material = material;
         this.telContato = telContato;
         // this.doacao = doacao;
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
-    }
-
-    public void setPagamento(TipoPagamento pagamento) {
-        this.pagamento = pagamento;
+        id = id;
     }
 
     public String getMaterial() {

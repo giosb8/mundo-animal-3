@@ -1,5 +1,5 @@
-package com.senai.infob.mundoanimal.repositories;
+// package com.senai.infob.mundoanimal.repositories;
 
-public class VaquinhaRepository {
+// public class VaquinhaRepository {
     
-}
+// }

@@ -36,6 +36,11 @@ public class PostagemService {
 
     }
 
+    public Postagem buscarPorId(Integer id) {
+    return postagemRepository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Postagem não encontrada"));
+}
+
 
     public boolean delete(Integer id) {
 

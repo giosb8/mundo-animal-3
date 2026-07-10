@@ -1,5 +1,5 @@
-package com.senai.infob.mundoanimal.services;
+// package com.senai.infob.mundoanimal.services;
 
-public class VaquinhaService {
+// public class VaquinhaService {
     
-}
+// }
