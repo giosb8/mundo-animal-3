@@ -26,9 +26,9 @@ public class PostagemController {
     consumes = MediaType.MULTIPART_FORM_DATA_VALUE
 )
 public Postagem salvar(
-        @RequestPart("titulo") String titulo,
-        @RequestPart("descricao") String descricao,
-        @RequestPart(required=false) MultipartFile imagem
+        @RequestParam("titulo") String titulo,
+        @RequestParam("descricao") String descricao,
+        @RequestParam(required=false) MultipartFile imagem
 ) throws IOException {
 
     Postagem postagem = new Postagem();
