@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.senai.infob.mundoanimal.models.Postagem;
 import com.senai.infob.mundoanimal.services.PostagemService;
 
-@CrossOrigin(origins = "*")
+
 @RestController
 @RequestMapping("/postagem")
 public class PostagemController {
@@ -55,13 +55,13 @@ public Postagem salvar(
 
     @GetMapping("/{id}/imagem")
     public ResponseEntity<byte[]> buscarImagem(@PathVariable Integer id) {
+        Postagem postagem = postagemService.buscarPorId(id);
 
-    Postagem postagem = postagemService.buscarPorId(id);
+        return ResponseEntity.ok()
+                .contentType(MediaType.IMAGE_JPEG)
+                .body(postagem.getImagem());
+    }
 
-    return ResponseEntity.ok()
-            .contentType(MediaType.IMAGE_JPEG)
-            .body(postagem.getImagem());
-}
 
     @DeleteMapping("/delete/{id}")
     public String deletar(@PathVariable Integer id) {
