@@ -16,6 +16,7 @@ import com.senai.infob.mundoanimal.services.PostagemService;
 
 @RestController
 @RequestMapping("/postagem")
+@CrossOrigin(origins = "*") 
 public class PostagemController {
 
     @Autowired
@@ -61,7 +62,6 @@ public Postagem salvar(
                 .contentType(MediaType.IMAGE_JPEG)
                 .body(postagem.getImagem());
     }
-
 
     @DeleteMapping("/delete/{id}")
     public String deletar(@PathVariable Integer id) {
