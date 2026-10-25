@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.senai.infob.mundoanimal.models.Postagem;
 import com.senai.infob.mundoanimal.services.PostagemService;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/postagem")
 public class PostagemController {
